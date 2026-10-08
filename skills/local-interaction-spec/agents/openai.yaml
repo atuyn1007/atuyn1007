@@ -1,0 +1,6 @@
+interface:
+  display_name: "本地交互式产品说明书"
+  short_description: "制作左侧 Demo 与右侧详细说明联动、可本地编辑保存并导出查看版的文件"
+  default_prompt: "使用 $local-interaction-spec，根据我的产品材料制作可本地编辑、保存新版本并导出查看版的交互式产品说明书。"
+policy:
+  allow_implicit_invocation: false

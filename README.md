@@ -34,3 +34,48 @@ Skill 名称为 `local-interaction-spec`，仅在明确选择或点名时启用�
 > 使用 $local-interaction-spec，根据这份需求制作一个左侧可操作、右侧可编辑说明的本地 Demo，支持保存版本和导出查看版。
 
 当前提供活动报名小样，演示报名确认、成功反馈、失败重试和空记录状态。小样没有连接真实后端；演示报名记录只存在于当前页面内存，说明文件版本与业务记录分别处理。
+
+
+## 安装到 Codex
+
+这是一个 Codex Skill 指令包，安装后用于指导 Codex 制作文件，不是安装后直接打开的独立编辑器。
+
+### 方法一：让 Codex 帮你安装（推荐）
+
+把下面这句话复制给 Codex：
+
+> 使用 $skill-installer，从 https://github.com/atuyn1007/atuyn1007/tree/main/skills/local-interaction-spec 安装 local-interaction-spec Skill。
+
+安装完成后，在下一轮对话中选择该 Skill；若当前客户端尚未显示它，可重新打开 Codex。
+
+### 方法二：手动下载
+
+1. [下载仓库 ZIP](https://github.com/atuyn1007/atuyn1007/archive/refs/heads/main.zip) 并解压。
+2. 找到 `skills/local-interaction-spec` 文件夹，将整个文件夹复制到 Codex 的个人 Skills 目录：
+   - Windows：`%USERPROFILE%\.codex\skills\local-interaction-spec`
+   - macOS / Linux：`~/.codex/skills/local-interaction-spec`
+   - 如果设置了 `CODEX_HOME`，使用 `$CODEX_HOME/skills/local-interaction-spec`。
+3. 确认 `SKILL.md` 位于该文件夹第一层，不要多套一层文件夹；已有同名 Skill 时先备份再替换。
+4. 在下一轮对话中选择 Skill；未显示时重新打开 Codex。
+
+完整安装文件结构：
+
+```text
+local-interaction-spec/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+    ├── local-files.md
+    └── spec-content.md
+```
+
+### 安装后使用
+
+选择“本地交互式产品说明书”，或在消息里输入：
+
+> 使用 $local-interaction-spec，帮我做一个活动报名小 Demo，左侧可以操作，右侧有可编辑的详细说明，支持保存新版本和导出查看版。
+
+它仅在明确选择或点名时启用；普通 Demo 请求不会自动套用这个格式。无需额外安装第三方包。生成与验证 Demo 需要 Codex 当前环境支持相应文件和浏览器操作。
+
+[查看完整 Skill 文件](skills/local-interaction-spec/SKILL.md)
